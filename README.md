@@ -1,70 +1,47 @@
-# Contract Monthly Claim System (CMCS)
+The project makes use of a black background for the UI with the rest of the colors contrasting to it to be better at UIX. All the text is in white and bright button colors for actions such as Submit, Approve, and Reject.
 
-## Overview
+Technologies Used
+C#: Front-end/back-end language.
+XAML: User interface designed in XAML.
+Microsoft Visual Studio: IDE used to code this application in.
+File Handling: Claims are saved and managed in a text file called claims.txt.
+Upload Document: Supporting files are uploaded to the uploads folder.
+Features
+Create Claim (Lecturer):
+Being a lecturer, he can create a claim about his hours, which includes details like Contract ID, Hours Worked, Rate per Hour, and Description. This gets stored as a pending claim and listed for review.
 
-This project is part of the Portfolio of Evidence (PoE) for the **Contract Monthly Claim System (CMCS)**. The CMCS application allows lecturers to submit monthly claims, while Programme Coordinators and Academic Managers can verify and approve or reject those claims. The system is built using **WPF (Windows Presentation Foundation)** in **C#** to provide a user-friendly interface with the following core functionalities:
+Check Claim (Coordinator/Manager):
+Coordinators and Managers can view the claims submitted and approve or reject the same. The status of each claim is updated, and the same can be viewed in an application section known as View Claims.
 
-- **Claim Submission**: Lecturers can submit claims for work hours, including claim details such as contract ID, hours worked, and claim description.
-- **Document Upload**: Supporting documents can be uploaded by lecturers while submitting a claim.
-- **Claim Review**: Coordinators and managers can view, approve, or reject submitted claims and update the claim status.
-- **Navigation Between Pages**: The application has multiple pages, including a dashboard, claim submission page, and claims overview for managers.
+Document Upload:
+Supporting documents for a claim by lecturers can be uploaded in the form of PDFs or Word while submitting a claim. The files are stored in the uploads directory and get tagged to the particular claim.
 
-## Technologies Used
+Navigation:
+It allows easy navigation among different sections, such as Submit Claim, View Claims, and Manage Contracts, through buttons along a side panel. Buttons and pages introduce a consistent black background for the interface and white text for better readability.
 
-- **C# (WPF)**: Core programming language used for the logic and UI design.
-- **XAML**: For designing the user interface in WPF.
-- **Microsoft Visual Studio**: Development environment for the project.
-- **File Handling**: Claims and claim statuses are stored in a text file (`claims.txt`).
-- **Document Uploads**: Files are saved in an `uploads` folder for document storage.
+Project Structure
+The project is structured as follows:
 
-## Features
-
-### 1. **Claim Submission (Lecturers)**
-- **Submit a Claim**: Lecturers can enter details such as contract ID, hours worked, hourly rate, and description of the claim. A date picker allows them to select the claim date.
-- **File Upload**: A file upload feature is available to attach supporting documents (e.g., PDF, Word documents).
-- **Data Persistence**: Claims are stored in a text file (`claims.txt`) for easy retrieval and management.
-  
-### 2. **Claim Verification (Coordinators/Managers)**
-- **View Submitted Claims**: A list of all submitted claims is displayed, showing contract ID, hours worked, hourly rate, total amount, description, date, and status.
-- **Approve/Reject Claims**: Coordinators and managers can approve or reject claims by updating the claim status in the system.
-  
-### 3. **Document Upload Management**
-- **Upload Supporting Documents**: Lecturers can upload supporting documents (e.g., PDFs, DOCX files) when submitting a claim.
-- **File Handling**: Uploaded documents are saved in an `uploads` directory and associated with the relevant claim.
-
-### 4. **Navigation**
-- **Multi-Page Navigation**: The application has separate pages for different functionalities:
-  - **Dashboard**
-  - **Submit Claim**
-  - **View Claims**
-  - **Manage Contracts**
-  - **Settings**
-
-  Each page can be accessed through a navigation panel on the left-hand side, allowing easy movement between sections of the app.
-
-## Project Structure
-
-The project follows a well-structured layout, with XAML and code-behind files for each page.
+MainWindow.xaml / MainWindow.xaml.cs: This contains the dashboard with navigation buttons to different sections of the system.
+SubmitClaim.xaml / SubmitClaim.xaml.cs: This is the form page where lecturers can submit claims.
+ViewClaims.xaml / ViewClaims.xaml.cs: This would be the page where Coordinators and Managers are supposed to view and process claims.
+claims.txt: File into which claims are written along with their statuses.
+uploads/: Folder into which uploaded supporting documents are kept.
+Installation and Setup
 
 
-### Key Files:
+View Submitted Claims:
+The submitted claims will be viewed from the View Claims page, where all the submitted claims will appear. Coordinators and managers will approve or reject claims and update the status.
 
-- **MainWindow.xaml / MainWindow.xaml.cs**: The main dashboard with navigation buttons to different sections.
-- **SubmitClaim.xaml / SubmitClaim.xaml.cs**: The page where lecturers submit their claims.
-- **ViewClaims.xaml / ViewClaims.xaml.cs**: Displays all submitted claims for coordinators and managers to review and approve/reject.
-- **claims.txt**: Stores all the submitted claims and their statuses.
-- **uploads/**: Contains uploaded supporting documents.
+Upload Supporting Documents:
+The supporting document, which is stored in the uploads folder, can be attached by the lecturers in charge of submitting the claim in PDF or Word document, etc., format.
 
-## Installation & Setup
+Error Handling
+The input fields of the system have been validated for ensuring that no field that is being required is left empty. In case, the system will show a validation message.
 
-### Prerequisites:
-- **Visual Studio 2019/2022**: Install Visual Studio with support for WPF and .NET.
-- **.NET Framework**: Ensure the .NET version for the project is installed (e.g., .NET 5 or later).
-
-### Steps:
-1. **Clone the Repository**: Clone the project files to your local machine.
-   ```bash
-   git clone https://github.com/your-repo/cmcs-system.git
-
-
-# CMCS2
+Known Issues
+File Concurrency: There can be some more concurrency issues with a text file for storing claims in case many users update it at the same time. Moving onto a database would solve this problem.
+Overwriting of Files: Similarly, uploaded files with the same name overwrite each other. Adding unique identifiers to the filename can avoid this issue.
+Future Improvements
+Switch to Database: Switching to database-driven applications from file-based storage to provide more scalability and management of data.
+Pagination: In case the number of claims increases overwhelmingly, pagination on the View Claims page should be implemented. Roles and Permissions: There will be different user roles like Admin, Lecturer, and Coordinator; each should be taken to different parts of the system.
