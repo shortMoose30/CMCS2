@@ -24,8 +24,8 @@ namespace ContractClaimSystem
                 SubmitClaim submitClaimPage = new SubmitClaim();
                 submitClaimPage.Show();
                 this.Close();
-            this.Close();
-        }
+
+            }
 
         }
     }
