@@ -33,10 +33,10 @@
         </StackPanel>
 
         <!-- Buttons -->
-        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0">
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,50,0,0">
             <Button Content="Upload Document" Width="140" Height="40" Background="#ff6f00" Foreground="White" FontWeight="Bold" Margin="0,230,0,0" Click="BtnUploadDocument_Click"/>
-            <Button Content="Submit Claim" Width="140" Height="40" Background="#4caf50" Foreground="White" FontWeight="Bold" Margin="0,230,0,0" Click="BtnSubmit_Click"/>
-            <Button Content="Back" Width="140" Height="40" Background="#d32f2f" Foreground="White" FontWeight="Bold" Margin="0,230,0,0" Click="BtnBack_Click"/>
+            <Button Content="Submit Claim" Width="140" Height="40" Background="#4caf50" Foreground="White" FontWeight="Bold" Margin="10,230,0,0" Click="BtnSubmit_Click"/>
+            <Button Content="Back" Width="140" Height="40" Background="#d32f2f" Foreground="White" FontWeight="Bold" Margin="10,230,0,0" Click="BtnBack_Click"/>
         </StackPanel>
 
         <!-- File Upload Status -->
