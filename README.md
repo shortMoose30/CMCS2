@@ -45,3 +45,5 @@ Overwriting of Files: Similarly, uploaded files with the same name overwrite eac
 Future Improvements
 Switch to Database: Switching to database-driven applications from file-based storage to provide more scalability and management of data.
 Pagination: In case the number of claims increases overwhelmingly, pagination on the View Claims page should be implemented. Roles and Permissions: There will be different user roles like Admin, Lecturer, and Coordinator; each should be taken to different parts of the system.
+
+https://github.com/shortMoose30/CMCS2.git
